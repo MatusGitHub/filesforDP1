@@ -1,0 +1,81 @@
+{
+  "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
+  "url": "http://data.mumok.at/artist.csv",
+  "dc:title": "Artists for objects from the mumok collection",
+  "dcat:keyword", error ["art", "museum", "artist"],
+  "dc:publisher": {
+    "schema:name": "mumok - museum moderner kunst stiftung ludwig wien",
+    "schema:url": {"@id": "http://www.mumok.at"}
+  },
+  "dc:license": {"@id": "https://creativecommons.org/licenses/by/3.0/at/legalcode"},
+  "dc:modified": {"@value": "2015-07-04", "@type": "xsd:date"},
+  "dialect":   {
+    "encoding": "utf-8",
+    "lineTerminators": ["\r\n", "\n"],
+    "quoteChar": "\"",
+    "doubleQuote": true,
+    "skipRows": 0,
+    "commentPrefix": "#",
+    "header": true,
+    "headerRowCount": 1,
+    "delimiter": ",",
+    "skipColumns": 0,
+    "skipBlankRows": false,
+    "skipInitialSpace": false,
+    "trim": false
+  },
+  "tableSchema": {
+    "columns": [{
+      "name": "artist_id",
+      "titles": "Artist Identifier",
+      "dc:description": "A unique identifier for the artist.",
+      "datatype": "integer",
+      "required": true
+    }, {
+      "name": "firstname",
+      "titles": "Firstname",
+      "dc:description": "The firstname of the artist.",
+      "datatype": "string"
+    }, {
+      "name": "name",
+      "titles": "Name (Lastname)",
+      "dc:description": "The lastname of the artist.",
+      "datatype": "string"
+    }, {
+      "name": "cityofbirth_de",
+      "titles": "City of birth in German",
+      "dc:description": "The city in which the artist has been born, in German.",
+      "datatype": "string",
+      "lang": "de"
+    }, {
+      "name": "cityofbirth_en",
+      "titles": "City of birth in English",
+      "dc:description": "The city in which the artist has been born, in English.",
+      "datatype": "string",
+      "lang": "en"
+    }, {
+      "name": "cityofdeath_de",
+      "titles": "City of death in German",
+      "dc:description": "The city in which the artist has died, in German.",
+      "datatype": "string",
+      "lang": "de"
+    }, {
+      "name": "cityofbirth_en",
+      "titles": "City of death in English",
+      "dc:description": "The city in which the artist has died, in English",
+      "datatype": "string",
+      "lang": "en"
+    }, {
+      "name": "birthyear",
+      "titles": "Artist's birthyear",
+      "dc:description": "The year in which the artist has been born.",
+      "datatype": {"base": "date", "format": "yyyy"} 
+    }, {
+      "name": "deathyear",
+      "titles": "Artist's deathyear",
+      "dc:description": "The year in which the artist has died.",
+      "datatype": {"base": "date", "format": "yyyy"} 
+    }],
+    "primaryKey": "artist_id"
+  }
+}
